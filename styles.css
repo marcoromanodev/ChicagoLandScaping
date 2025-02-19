@@ -1,0 +1,373 @@
+/* Reset and base styles */
+body, h1, h2, h3, p, ul, li, a, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    padding-bottom: 70px;
+    background-color: white;
+    text-align: center;
+    padding-top: 80px;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header */
+.header {
+    background: lightgreen;
+    color: #fff;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo-container h1 {
+    color: black;
+    font-family: 'Merriweather', serif;
+    font-size: 2em;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+}
+
+.main-nav ul li a {
+    color: black;
+    font-size: 1.1em;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: white;
+    text-shadow: 0 0 10px white;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 1500;
+}
+
+/* Hamburger Icon Glow */
+.hamburger.active {
+    color: limegreen;
+    text-shadow: 0 0 10px limegreen;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 33.33%; /* Left third of the screen */
+    height: 100%; /* Full screen height */
+    background: rgba(0, 0, 0, 0.8); /* Dark transparent box */
+    z-index: 1000;
+    text-align: center;
+    padding-top: 100px; /* Center the links vertically */
+}
+
+.mobile-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu ul li {
+    margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+    color: white;
+    font-size: 1.5em;
+    display: block;
+    padding: 10px 0;
+}
+
+/* Navigation links glow on hover (mobile menu) */
+.mobile-menu ul li a:hover {
+    text-shadow: 0 0 10px white;
+}
+
+/* Show mobile menu when active */
+.mobile-menu.show {
+    display: block;
+}
+
+/* Close button in mobile menu */
+.mobile-menu .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile Contact Bar */
+.mobile-contact-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    z-index: 1000;
+}
+
+.mobile-contact-bar a {
+    color: #fff;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.mobile-contact-bar .text-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: limegreen;
+    color: #333;
+    font-size: 1.4em;
+}
+
+.mobile-contact-bar a:hover {
+    text-shadow: 0 0 10px lightgreen;
+}
+
+/* Main Banner */
+.main-banner {
+    background: url('landscapeconstruction.jpeg') no-repeat center center/cover;
+    background-size: cover;
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2.5em;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+
+.main-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* About Section */
+.about {
+    background: url('aboutus.png') no-repeat center center/cover;
+    background-size: cover;
+    padding: 40px;
+    opacity: 0.8;
+}
+
+.about h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2.5em;
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.about p {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.about .about-us-content {
+    font-size: 1.2em;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.about .about-us-content p {
+    font-size: 1.1em;
+    color: white;
+}
+
+/* Solutions Section */
+.solutions {
+    background: url('2.jpeg') no-repeat center center/cover;
+    padding: 40px 20px;
+    color: black;
+}
+
+.solutions-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.solution-item {
+    width: 30%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.solution-item i {
+    font-size: 3em;
+    color: #90EE90;
+}
+
+.solution-item h3 {
+    margin: 15px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 500;
+    margin-top: 100px;
+}
+
+.certifications {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.certifications img {
+    width: 80px;
+    height: 80px;
+}
+
+.certifications-row {
+    display: flex;
+    gap: 10px;
+}
+
+.certification-large img {
+    width: 400px;
+    height: auto;
+}
+
+.sub-footer {
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.8em;
+}
+
+/* Ensure the footer is at the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    /* Hide the desktop nav on mobile */
+    .main-nav ul {
+        display: none;
+    }
+
+    /* Show the hamburger icon on mobile */
+    .hamburger {
+        display: block;
+    }
+
+    /* Mobile Menu Styling */
+    .mobile-menu {
+        display: none; /* Hidden by default */
+    }
+
+    /* Show the mobile menu when active */
+    .mobile-menu.show {
+        display: block;
+    }
+
+    /* Styling for mobile menu links */
+    .mobile-menu ul li a {
+        color: white;
+        font-size: 1.5em;
+        display: block;
+        padding: 10px 0;
+    }
+
+    /* Mobile Contact Bar - Phone Icon Glow */
+    .mobile-contact-bar a.phone-icon:hover {
+        text-shadow: 0 0 10px limegreen;
+    }
+}
+
+/* Smooth Scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Offset for scrolling to section */
+section {
+    padding-top: 100px;
+}
