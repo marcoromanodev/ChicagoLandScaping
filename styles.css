@@ -8,6 +8,11 @@ body, h1, h2, h3, p, ul, li, a, img {
     vertical-align: baseline;
 }
 
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     line-height: 1.6;
     font-family: 'Open Sans', sans-serif;
