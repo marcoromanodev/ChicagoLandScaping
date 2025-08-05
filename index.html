@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets -->
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 
   <!-- jQuery (if needed) -->
@@ -28,13 +28,10 @@
       <div class="logo-container">
         <a href="https://anaslandscaping.com">
           <h1 style="font-family: 'Merriweather', serif; color: black; text-align: center;">
-  <img src="newlogo.png" alt="New Logo" style="width: 85px; margin-right: 10px; vertical-align: middle;">ANA'S LANDSCAPING LLC
-</h1>
+            <img src="newlogo.png" alt="New Logo" style="width: 85px; margin-right: 10px; vertical-align: middle;">ANA'S LANDSCAPING LLC
+          </h1>
         </a>
       </div>
-        
-
-
       <ul class="desktop-menu">
         <li><a href="#about">About Us</a></li>
         <li><a href="#solutions">Solutions</a></li>
@@ -62,18 +59,18 @@
     </ul>
   </div>
 
-<div id="mobile-bar" class="mobile-contact-bar">
-  <a href="#service-area" class="service-area">
-    <i class="fas fa-search" style="color: lightgreen;"></i> Service Area
-  </a>
-  <a href="sms:+17736778143" class="text-circle">
-    <i class="fas fa-mobile-alt" style="color: lightgreen;"></i>
-  </a>
-  <a href="mailto:anaslandscapingllc@gmail.com" class="contact-us">
-    <i class="fas fa-envelope" style="color: lightgreen;"></i> Contact Us
-  </a>
-</div>
-
+  <!-- Mobile Contact Bar -->
+  <div id="mobile-bar" class="mobile-contact-bar">
+    <a href="#service-area" class="service-area">
+      <i class="fas fa-search" style="color: lightgreen;"></i> Service Area
+    </a>
+    <a href="sms:+17736778143" class="text-circle">
+      <i class="fas fa-mobile-alt" style="color: lightgreen;"></i>
+    </a>
+    <a href="mailto:anaslandscapingllc@gmail.com" class="contact-us">
+      <i class="fas a-envelope" style="color: lightgreen;"></i> Contact Us
+    </a>
+  </div>
 
   <!-- Main Banner -->
   <section class="main-banner" style="background: url('landscapeconstruction.jpeg') no-repeat center center/cover; background-size: cover; opacity: 0.6;">
@@ -141,11 +138,11 @@
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 2.5em; font-weight: bold;">Contact Us</h2>
-    <form id="contact-form">
+    <form id="contact-form" class="contact-form">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn primary-btn" style="background-color: lightgreen;">Send Message</button>
+      <button type="submit" class="btn primary-btn">Send Message</button>
     </form>
   </section>
 
@@ -176,13 +173,6 @@
       const hamburger = document.querySelector('.hamburger');
       const closeBtn = document.querySelector('.mobile-menu .close-btn');
 
-      if (!mobileMenu) {
-        console.error("Mobile menu not found!");
-      }
-      if (!hamburger) {
-        console.error("Hamburger icon not found!");
-      }
-
       // Toggle mobile menu visibility when the hamburger icon is clicked
       hamburger.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -211,6 +201,31 @@
           hamburger.classList.remove('active');
         });
       }
+    });
+  </script>
+
+  <!-- EmailJS Integration -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init('YOUR_PUBLIC_KEY'); // replace with your EmailJS public key
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+        from_name: form.name.value,
+        from_email: form.email.value,
+        message: form.message.value,
+        to_email: 'jose@anaslandscaping.com'
+      })
+      .then(function() {
+        alert('Message sent successfully!');
+        form.reset();
+      }, function(error) {
+        alert('Oops, something went wrong. Error: ' + JSON.stringify(error));
+      });
     });
   </script>
 </body>
