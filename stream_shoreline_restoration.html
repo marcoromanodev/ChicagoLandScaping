@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stream & Shoreline Restoration - ANAS Landscaping LLC</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="main-nav">
+      <div class="logo-container">
+        <a href="https://anaslandscaping.com">
+          <img src="newlogo.png" alt="ANAS Landscaping LLC Logo" style="width: 120px; display: block; margin: 0 auto;">
+        </a>
+      </div>
+      <ul class="desktop-menu">
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#solutions">Solutions</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#testimonials">Testimonials</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <div class="mobile-menu">
+    <div class="close-btn">&times;</div>
+    <ul>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="index.html#solutions">Solutions</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#testimonials">Testimonials</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <div id="mobile-bar" class="mobile-contact-bar">
+    <a href="index.html#service-area" class="service-area">
+      <i class="fas fa-search" style="color: lightgreen;"></i> Service Area
+    </a>
+    <a href="sms:+17736778143" class="text-circle">
+      <i class="fas fa-mobile-alt" style="color: lightgreen;"></i>
+    </a>
+    <a href="mailto:anaslandscapingllc@gmail.com" class="contact-us">
+      <i class="fas fa-envelope" style="color: lightgreen;"></i> Contact Us
+    </a>
+  </div>
+
+  <section class="service-detail">
+    <h2>Stream & Shoreline Restoration</h2>
+    <p>Our stream and shoreline restoration services focus on rehabilitating waterways and shorelines to promote stability, reduce erosion, and enhance habitat. Using bioengineering techniques such as native plantings, rock structures, coir logs, and live staking, we stabilize banks and restore the natural ecology.</p>
+    <p>We work closely with environmental agencies, communities, and property owners to design restoration plans that improve water quality, protect wildlife, and create sustainable recreational areas. Each project is approached with respect for the existing ecosystem and a commitment to long-term success.</p>
+  </section>
+
+  <section class="service-detail">
+    <h2>Photo Gallery</h2>
+    <div class="carousel-container">
+      <button class="carousel-arrow left-arrow">&#10094;</button>
+      <div class="carousel">
+        <div class="carousel-images">
+          <div class="carousel-img">
+            <img src="stream_restoration1.jpg" alt="Stream Restoration 1">
+            <p class="image-title">Stream Restoration</p>
+          </div>
+          <div class="carousel-img">
+            <img src="stream_restoration2.jpg" alt="Stream Restoration 2">
+            <p class="image-title">Shoreline Stabilization</p>
+          </div>
+          <div class="carousel-img">
+            <img src="stream_restoration3.jpg" alt="Stream Restoration 3">
+            <p class="image-title">Natural Habitat Repair</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-arrow right-arrow">&#10095;</button>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form" class="contact-form" action="mailto:jose@anaslandscaping.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn primary-btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="certifications">
+      <div class="certifications-row">
+        <img src="1.png" alt="Certification 1">
+        <img src="2.png" alt="Certification 2">
+        <img src "3.png" alt="Certification 3">
+        <img src="4.png" alt="Certification 4">
+      </div>
+      <div class="certification-large">
+        <img src="5.png" alt="Certification 5">
+      </div>
+    </div>
+    <p>&copy; 2025 ANAS LANDSCAPING LLC.<br>All rights reserved.</p>
+  </footer>
+
+  <div class="sub-footer">
+    <p>Developed by <a href="https://saasproductized.com" target="_blank" style="font-weight:bold;">SaaS Productized Co.</a></p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Mobile menu
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const hamburger = document.querySelector('.hamburger');
+      const closeBtn = document.querySelector('.mobile-menu .close-btn');
+
+      hamburger.addEventListener('click', function (e) {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('show');
+        hamburger.classList.toggle('active');
+      });
+
+      window.addEventListener('click', function (event) {
+        if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+          mobileMenu.classList.remove('show');
+          hamburger.classList.remove('active');
+        }
+      });
+
+      mobileMenu.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          mobileMenu.classList.remove('show');
+          hamburger.classList.remove('active');
+        });
+      }
+
+      // Carousel
+      const carousel = document.querySelector('.carousel-images');
+      const slides = document.querySelectorAll('.carousel-img');
+      const leftArrow = document.querySelector('.left-arrow');
+      const rightArrow = document.querySelector('.right-arrow');
+      let currentIndex = 0;
+      const imagesToShow = 1;
+      let imageWidth = slides[0].clientWidth;
+
+      function updateCarousel() {
+        const newTransformValue = -currentIndex * imageWidth;
+        carousel.style.transform = \`translateX(\${newTransformValue}px)\`;
+      }
+
+      rightArrow.addEventListener('click', () => {
+        if (currentIndex < slides.length - imagesToShow) {
+          currentIndex++;
+          updateCarousel();
+        }
+      });
+
+      leftArrow.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        imageWidth = slides[0].clientWidth;
+        updateCarousel();
+      });
+    });
+  </script>
+</body>
+</html>
