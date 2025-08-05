@@ -141,7 +141,7 @@
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2 style="font-family: 'Roboto Condensed', sans-serif; font-size: 2.5em; font-weight: bold;">Contact Us</h2>
-    <form id="contact-form" class="contact-form">
+    <form id="contact-form" class="contact-form" action="mailto:jose@anaslandscaping.com" method="post" enctype="text/plain">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" placeholder="Your Message" required></textarea>
@@ -162,7 +162,7 @@
         <img src="5.png" alt="Certification 5">
       </div>
     </div>
-    <p>&copy; 2025 ANAS LANDSCAPING LLC. <br> All rights reserved.</p>
+    <p>&copy; 2025 ANAS LANDSCAPING LLC.<br> All rights reserved.</p>
   </footer>
 
   <div class="sub-footer">
@@ -206,31 +206,5 @@
       }
     });
   </script>
-
-  <!-- EmailJS Integration -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function() {
-      emailjs.init('YOUR_PUBLIC_KEY'); // replace with your EmailJS public key
-    })();
-
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = this;
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-        from_name: form.name.value,
-        from_email: form.email.value,
-        message: form.message.value,
-        to_email: 'jose@anaslandscaping.com'
-      })
-      .then(function() {
-        alert('Message sent successfully!');
-        form.reset();
-      }, function(error) {
-        alert('Oops, something went wrong. Error: ' + JSON.stringify(error));
-      });
-    });
-  </script>
 </body>
 </html>
-
