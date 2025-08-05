@@ -137,31 +137,44 @@
       <button class="carousel-arrow left-arrow">&#10094;</button>
       <div class="carousel">
         <div class="carousel-images">
-          <!-- Replace these images with your actual project photos -->
-          <img src="project1.jpg" alt="Project image 1" class="carousel-img">
-          <img src="project2.jpg" alt="Project image 2" class="carousel-img">
-          <img src="project3.jpg" alt="Project image 3" class="carousel-img">
-          <img src="project4.jpg" alt="Project image 4" class="carousel-img">
-          <img src="project5.jpg" alt="Project image 5" class="carousel-img">
+          <div class="carousel-img">
+            <img src="1.jpg" alt="Project 1" class="project-img">
+            <p class="image-title">Project 1</p>
+          </div>
+          <div class="carousel-img">
+            <img src="2.jpeg" alt="Project 2" class="project-img">
+            <p class="image-title">Project 2</p>
+          </div>
+          <div class="carousel-img">
+            <img src="3.png" alt="Project 3" class="project-img">
+            <p class="image-title">Project 3</p>
+          </div>
+          <div class="carousel-img">
+            <img src="4.jpg" alt="Project 4" class="project-img">
+            <p class="image-title">Project 4</p>
+          </div>
+          <div class="carousel-img">
+            <img src="5.jpeg" alt="Project 5" class="project-img">
+            <p class="image-title">Project 5</p>
+          </div>
         </div>
       </div>
       <button class="carousel-arrow right-arrow">&#10095;</button>
     </div>
   </section>
 
-<!-- Testimonials Section -->
-<section id="testimonials" class="testimonials">
-  <h2>What Our Clients Say</h2>
-  <p>See our reviews on Google:</p>
-  <div class="testimonial-link-container">
-    <a href="https://www.google.com/search?q=ANAS+Landscaping+LLC+reviews"
-       target="_blank">
-      Look up ANAS Landscaping LLC on Google
-    </a>
-    <i class="fas fa-hand-pointer click-icon"></i>
-  </div>
-</section>
-
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <p>See our reviews on Google:</p>
+    <div class="testimonial-link-container">
+      <a href="https://www.google.com/search?q=ANAS+Landscaping+LLC+reviews" target="_blank">
+        Look up ANAS Landscaping LLC on Google
+      </a>
+      <!-- Animated hand pointer icon -->
+      <i class="fas fa-hand-pointer click-icon"></i>
+    </div>
+  </section>
 
   <!-- Service Area Section -->
   <section id="service-area" class="service-area">
@@ -172,7 +185,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class "contact">
+  <section id="contact" class="contact">
     <h2>Contact Us</h2>
     <form id="contact-form" class="contact-form" action="mailto:jose@anaslandscaping.com" method="post" enctype="text/plain">
       <input type="text" name="name" placeholder="Your Name" required>
@@ -240,8 +253,9 @@
       const carouselImages = document.querySelectorAll('.carousel-img');
       const leftArrow = document.querySelector('.left-arrow');
       const rightArrow = document.querySelector('.right-arrow');
+
       let currentIndex = 0;
-      const imagesToShow = 3;
+      const imagesToShow = 2; // Show two images at a time now
       let imageWidth = carouselImages[0].clientWidth;
 
       function updateCarousel() {
