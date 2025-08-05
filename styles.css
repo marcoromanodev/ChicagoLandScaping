@@ -1,4 +1,8 @@
 /* Reset and base styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body, h1, h2, h3, p, ul, li, a, img {
     margin: 0;
     padding: 0;
@@ -22,6 +26,9 @@ body {
     text-align: center;
     padding-top: 80px;
     color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 a {
@@ -90,7 +97,6 @@ ul {
     z-index: 1500;
 }
 
-/* Hamburger Icon Glow */
 .hamburger.active {
     color: limegreen;
     text-shadow: 0 0 10px limegreen;
@@ -98,16 +104,16 @@ ul {
 
 /* Mobile Menu */
 .mobile-menu {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 33.33%; /* Left third of the screen */
-    height: 100%; /* Full screen height */
-    background: rgba(0, 0, 0, 0.8); /* Dark transparent box */
+    width: 33.33%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     text-align: center;
-    padding-top: 100px; /* Center the links vertically */
+    padding-top: 100px;
 }
 
 .mobile-menu ul {
@@ -126,17 +132,14 @@ ul {
     padding: 10px 0;
 }
 
-/* Navigation links glow on hover (mobile menu) */
 .mobile-menu ul li a:hover {
     text-shadow: 0 0 10px white;
 }
 
-/* Show mobile menu when active */
 .mobile-menu.show {
     display: block;
 }
 
-/* Close button in mobile menu */
 .mobile-menu .close-btn {
     position: absolute;
     top: 10px;
@@ -189,12 +192,18 @@ ul {
     background: url('landscapeconstruction.jpeg') no-repeat center center/cover;
     background-size: cover;
     text-align: center;
-    padding: 60px 20px;
+    padding: 140px 20px 60px; /* Adjusted top padding to clear header */
     color: white;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 2.5em;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
     position: relative;
+}
+
+@media (max-width: 768px) {
+    .main-banner {
+        padding-top: 180px; /* More top space on smaller screens */
+    }
 }
 
 .main-banner::before {
@@ -286,7 +295,7 @@ ul {
     padding: 40px 20px;
     position: relative;
     z-index: 500;
-    margin-top: 100px;
+    margin-top: auto;
 }
 
 .certifications {
@@ -320,40 +329,24 @@ ul {
     font-size: 0.8em;
 }
 
-/* Ensure the footer is at the bottom */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.footer {
-    margin-top: auto;
-}
-
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
-    /* Hide the desktop nav on mobile */
     .main-nav ul {
         display: none;
     }
 
-    /* Show the hamburger icon on mobile */
     .hamburger {
         display: block;
     }
 
-    /* Mobile Menu Styling */
     .mobile-menu {
-        display: none; /* Hidden by default */
+        display: none;
     }
 
-    /* Show the mobile menu when active */
     .mobile-menu.show {
         display: block;
     }
 
-    /* Styling for mobile menu links */
     .mobile-menu ul li a {
         color: white;
         font-size: 1.5em;
@@ -361,7 +354,6 @@ body {
         padding: 10px 0;
     }
 
-    /* Mobile Contact Bar - Phone Icon Glow */
     .mobile-contact-bar a.phone-icon:hover {
         text-shadow: 0 0 10px limegreen;
     }
@@ -370,9 +362,10 @@ body {
 /* Smooth Scrolling for anchor links */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Ensures anchor scrolling accounts for fixed header */
 }
 
-/* Offset for scrolling to section */
 section {
     padding-top: 100px;
 }
+
