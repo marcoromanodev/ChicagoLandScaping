@@ -326,31 +326,27 @@ ul { list-style: none; }
 #testimonials p {
   margin-bottom: 20px;
 }
-
-/* Make the testimonials link appear clickable */
+/* Link styling for Testimonials */
 #testimonials a {
   text-decoration: underline;
   color: #007BFF;
   font-weight: 600;
 }
-
-/* Container for the animated click effect */
+/* Container for animated click effect */
 .testimonial-link-container {
   position: relative;
   display: inline-block;
 }
-
-/* Animated hand pointer icon for the Google lookup link */
+/* Animated hand pointer icon */
 .testimonial-link-container .click-icon {
   position: absolute;
-  top: -10px;        /* adjust to fine-tune position */
-  right: -30px;      /* adjust horizontal offset */
-  font-size: 1.5em;  /* size of the hand icon */
-  color: #007BFF;    /* match link color */
+  top: -10px;
+  right: -30px;
+  font-size: 1.5em;
+  color: #007BFF;
   animation: click-animation 1.2s infinite;
 }
-
-/* Keyframes to simulate a click motion */
+/* Keyframes for click animation */
 @keyframes click-animation {
   0%, 100% {
     transform: translateY(0) scale(1);
@@ -361,7 +357,6 @@ ul { list-style: none; }
     opacity: 0.7;
   }
 }
-
 
 /* Service Area Map */
 .map-container {
