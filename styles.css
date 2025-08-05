@@ -274,6 +274,16 @@ ul {
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Ensure text does not overflow */
+.solution-item h3,
+.solution-item p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .solution-item i {
@@ -285,6 +295,65 @@ ul {
     margin: 15px 0;
     font-size: 1.5em;
     font-weight: bold;
+}
+
+/* Center the service area map container */
+.map-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 15px;
+    box-sizing: border-box;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 600px;
+    border: none;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    gap: 1rem;
+    box-sizing: border-box;
+    background-color: rgba(240, 240, 240, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+}
+
+.contact-form button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #1b4d1b;
 }
 
 /* Footer */
@@ -357,6 +426,31 @@ ul {
     .mobile-contact-bar a.phone-icon:hover {
         text-shadow: 0 0 10px limegreen;
     }
+
+    /* Adjust solution items to stack on mobile */
+    .solution-item {
+        width: 90% !important;
+        margin: 0 auto 20px auto;
+        padding: 15px !important;
+    }
+
+    /* Increase font-size adjustments for small devices */
+    .solution-item h3 {
+        font-size: 1.3em;
+    }
+
+    /* Map container padding adjusted */
+    .map-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Contact form full width on mobile */
+    .contact-form {
+        width: 90%;
+        max-width: 100%;
+        padding: 1rem;
+    }
 }
 
 /* Smooth Scrolling for anchor links */
@@ -368,4 +462,3 @@ html {
 section {
     padding-top: 100px;
 }
-
