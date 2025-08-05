@@ -327,6 +327,42 @@ ul { list-style: none; }
   margin-bottom: 20px;
 }
 
+/* Make the testimonials link appear clickable */
+#testimonials a {
+  text-decoration: underline;
+  color: #007BFF;
+  font-weight: 600;
+}
+
+/* Container for the animated click effect */
+.testimonial-link-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Animated hand pointer icon for the Google lookup link */
+.testimonial-link-container .click-icon {
+  position: absolute;
+  top: -10px;        /* adjust to fine-tune position */
+  right: -30px;      /* adjust horizontal offset */
+  font-size: 1.5em;  /* size of the hand icon */
+  color: #007BFF;    /* match link color */
+  animation: click-animation 1.2s infinite;
+}
+
+/* Keyframes to simulate a click motion */
+@keyframes click-animation {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(4px) scale(0.9);
+    opacity: 0.7;
+  }
+}
+
+
 /* Service Area Map */
 .map-container {
   width: 100%;
