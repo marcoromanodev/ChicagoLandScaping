@@ -29,6 +29,10 @@ body {
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
+body.needs-extra-padding {
+  padding: 140px 20px 60px;
+}
+
 /* Header */
 .header {
   background: lightgreen;
