@@ -37,4 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
   mobileMenu.addEventListener('click', function (e) {
     e.stopPropagation();
   });
+
+  // Close menu when a menu link is clicked
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function () {
+      mobileMenu.classList.remove('show');
+      hamburger.classList.remove('active');
+    });
+  });
 });
