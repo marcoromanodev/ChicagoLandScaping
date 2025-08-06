@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const mobileMenu = document.querySelector('.mobile-menu');
   const hamburger = document.querySelector('.hamburger');
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Close the menu when clicking the close button (if it exists)
+  // Close the menu when clicking the close button
   if (closeBtn) {
     closeBtn.addEventListener('click', function (e) {
       e.stopPropagation();
