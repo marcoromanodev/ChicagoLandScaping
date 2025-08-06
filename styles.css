@@ -49,6 +49,12 @@ body.needs-extra-padding {
 }
 .logo-container { text-align: center; }
 
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-nav ul {
   display: flex;
   justify-content: center;
