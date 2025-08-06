@@ -1,13 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
+function initMobileMenu() {
   const mobileMenu = document.querySelector('.mobile-menu');
   const hamburger = document.querySelector('.hamburger');
   const closeBtn = document.querySelector('.mobile-menu .close-btn');
 
-  // Ensure required elements are present
-  if (!mobileMenu || !hamburger) {
-    console.error("Error: .mobile-menu or .hamburger not found in DOM.");
-    return;
-  }
+  if (!mobileMenu || !hamburger) return;
 
   // Toggle mobile menu on hamburger click
   hamburger.addEventListener('click', function (e) {
@@ -37,4 +33,18 @@ document.addEventListener("DOMContentLoaded", function () {
   mobileMenu.addEventListener('click', function (e) {
     e.stopPropagation();
   });
-});
+
+  // Close menu when a menu link is clicked
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function () {
+      mobileMenu.classList.remove('show');
+      hamburger.classList.remove('active');
+    });
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMobileMenu);
+} else {
+  initMobileMenu();
+}

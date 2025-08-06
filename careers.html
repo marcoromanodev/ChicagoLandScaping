@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script defer src="script.js"></script>
 </head>
   <body class="needs-extra-padding">
   <!-- Header -->
@@ -78,7 +79,6 @@
             <img src="beautiful.jpg" alt="About Photo 2">
             <p class="image-title">Beautiful Landscape Project</p>
           </div>
-          </div>
         </div>
       </div>
       <button class="carousel-arrow right-arrow">&#10095;</button>
@@ -119,37 +119,6 @@
   <!-- Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Mobile menu handling
-      const mobileMenu = document.querySelector('.mobile-menu');
-      const hamburger = document.querySelector('.hamburger');
-      const closeBtn = document.querySelector('.mobile-menu .close-btn');
-
-      hamburger.addEventListener('click', function (e) {
-        e.stopPropagation();
-        mobileMenu.classList.toggle('show');
-        hamburger.classList.toggle('active');
-      });
-
-      window.addEventListener('click', function (event) {
-        if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
-          mobileMenu.classList.remove('show');
-          hamburger.classList.remove('active');
-        }
-      });
-
-      mobileMenu.addEventListener('click', function (e) {
-        e.stopPropagation();
-      });
-
-      if (closeBtn) {
-        closeBtn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          mobileMenu.classList.remove('show');
-          hamburger.classList.remove('active');
-        });
-      }
-
-      // Carousel handling (show 1 image at a time)
       const carousel = document.querySelector('.carousel-images');
       const slides = document.querySelectorAll('.carousel-img');
       const leftArrow = document.querySelector('.left-arrow');
