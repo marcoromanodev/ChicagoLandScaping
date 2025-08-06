@@ -25,6 +25,7 @@
 
   <!-- jQuery (if needed) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script defer src="script.js"></script>
 </head>
 <body>
   <!-- Header -->
@@ -223,40 +224,9 @@
     <p>Developed by <a href="https://saasproductized.com" target="_blank" style="font-weight: bold;">SaaS Productized Co.</a></p>
   </div>
 
-  <!-- Inline JavaScript (mobile menu and carousel) -->
-  <script>
+    <!-- Inline JavaScript (carousel only) -->
+    <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Mobile menu handling
-      const mobileMenu = document.querySelector('.mobile-menu');
-      const hamburger = document.querySelector('.hamburger');
-      const closeBtn = document.querySelector('.mobile-menu .close-btn');
-
-      hamburger.addEventListener('click', function (e) {
-        e.stopPropagation();
-        mobileMenu.classList.toggle('show');
-        hamburger.classList.toggle('active');
-      });
-
-      window.addEventListener('click', function (event) {
-        if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
-          mobileMenu.classList.remove('show');
-          hamburger.classList.remove('active');
-        }
-      });
-
-      mobileMenu.addEventListener('click', function (e) {
-        e.stopPropagation();
-      });
-
-      if (closeBtn) {
-        closeBtn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          mobileMenu.classList.remove('show');
-          hamburger.classList.remove('active');
-        });
-      }
-
-      // Projects carousel handling
       const carousel = document.querySelector('.carousel-images');
       const carouselImages = document.querySelectorAll('.carousel-img');
       const leftArrow = document.querySelector('.left-arrow');
