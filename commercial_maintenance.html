@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Maintenance - ANA'S Landscaping LLC</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script defer src="script.js"></script>
+</head>
+  <body class="needs-extra-padding">
+  <!-- Header -->
+  <header class="header">
+    <nav class="main-nav">
+      <div class="logo-container">
+        <a href="https://anaslandscaping.com">
+          <img src="newlogo.png" alt="ANA'S Landscaping LLC Logo" style="width: 120px; display: block; margin: 0 auto;">
+        </a>
+      </div>
+      <ul class="desktop-menu">
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#solutions">Solutions</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#testimonials">Testimonials</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="close-btn">&times;</div>
+    <ul>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="index.html#solutions">Solutions</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#testimonials">Testimonials</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Mobile Contact Bar -->
+  <div id="mobile-bar" class="mobile-contact-bar">
+    <a href="index.html#service-area" class="service-area">
+      <i class="fas fa-search" style="color: lightgreen;"></i> Service Area
+    </a>
+    <a href="sms:+17736778143" class="text-circle">
+      <i class="fas fa-mobile-alt" style="color: lightgreen;"></i>
+    </a>
+    <a href="mailto:anaslandscapingllc@gmail.com" class="contact-us">
+      <i class="fas fa-envelope" style="color: lightgreen;"></i> Contact Us
+    </a>
+  </div>
+
+  <!-- Service Detail -->
+  <style> padding: 140px 20px 60px; /* Increased top padding to avoid cropping */ </style>
+  <section class="service-detail">
+    <h2>Commercial Maintenance</h2>
+    <div class="carousel-container">
+      <button class="carousel-arrow left-arrow">&#10094;</button>
+      <div class="carousel">
+        <div class="carousel-images">
+          <div class="carousel-img">
+            <img src="ourteamatwork.jpg" alt="Maintenance Crew at Work">
+            <p class="image-title">Routine Care</p>
+          </div>
+          <div class="carousel-img">
+            <img src="lushflowers.jpg" alt="Vibrant Commercial Landscape">
+            <p class="image-title">Seasonal Color</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-arrow right-arrow">&#10095;</button>
+    </div>
+    <p>Drive up to your commercial property and what do you see? Neat, clean lines, highlighted entryways, and pathways that promote easy traffic flow. This vision isn’t a fantasy. From the smallest, busiest property to the largest, most complex one, your landscape has the power to elevate occupancy, boost profits, reduce liability, and enhance reputation.</p>
+    <p>With so much at stake, you can’t afford frustration or liability issues. You need a commercial landscaping partner you can count on to keep your property looking its best.</p>
+    <p>Commercial landscape maintenance should be more than just a service. We build long-lasting relationships with our clients—you are family, and we’ll be there when you need us most.</p>
+    <p>Property management can be stressful. From turnkey maintenance to clear communication, our reliable team has your back and delivers an unmatched return on investment.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form" class="contact-form" action="mailto:jose@anaslandscaping.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn primary-btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="certifications">
+      <div class="certifications-row">
+        <img src="1.png" alt="Certification 1">
+        <img src="2.png" alt="Certification 2">
+        <img src="3.png" alt="Certification 3">
+        <img src="4.png" alt="Certification 4">
+      </div>
+      <div class="certification-large">
+        <img src="5.png" alt="Certification 5">
+      </div>
+    </div>
+    <p>&copy; 2025 ANA'S LANDSCAPING LLC.<br>All rights reserved.</p>
+  </footer>
+
+  <div class="sub-footer">
+    <p>Developed by <a href="https://saasproductized.com" target="_blank" style="font-weight: bold;">SaaS Productized Co.</a></p>
+  </div>
+
+  <!-- Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const carousel = document.querySelector('.carousel-images');
+      const slides = document.querySelectorAll('.carousel-img');
+      const leftArrow = document.querySelector('.left-arrow');
+      const rightArrow = document.querySelector('.right-arrow');
+
+      let currentIndex = 0;
+      const imagesToShow = 1;
+      let imageWidth = slides[0].clientWidth;
+
+      function updateCarousel() {
+        const newTransformValue = -currentIndex * imageWidth;
+        carousel.style.transform = \`translateX(\${newTransformValue}px)\`;
+      }
+
+      rightArrow.addEventListener('click', () => {
+        if (currentIndex < slides.length - imagesToShow) {
+          currentIndex++;
+          updateCarousel();
+        }
+      });
+
+      leftArrow.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        imageWidth = slides[0].clientWidth;
+        updateCarousel();
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
