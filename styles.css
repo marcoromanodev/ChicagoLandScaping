@@ -152,7 +152,8 @@ body.needs-extra-padding {
   text-align: center;
   padding: 140px 20px 60px;
   color: white;
-  font-family: 'Roboto Condensed', sans-serif;
+  /* Updated to a classic newspaper-style serif font for quoted announcements */
+  font-family: 'Times New Roman', Times, serif;
   font-size: 2.5em;
   text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
   position: relative;
