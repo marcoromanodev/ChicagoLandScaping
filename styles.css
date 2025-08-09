@@ -187,6 +187,7 @@ body.needs-extra-padding {
 }
 .hero-motto .motto-years {
   display: inline;
+  white-space: nowrap;
 }
 @media (max-width: 600px) {
   .hero-motto {
@@ -194,6 +195,7 @@ body.needs-extra-padding {
   }
   .hero-motto .motto-years {
     display: block;
+    white-space: nowrap;
   }
 }
 @media (min-width: 1024px) {
