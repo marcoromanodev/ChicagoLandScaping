@@ -152,8 +152,6 @@ body.needs-extra-padding {
   text-align: center;
   padding: 140px 20px 60px;
   color: white;
-  /* Updated to a classic newspaper-style serif font for quoted announcements */
-  font-family: 'Times New Roman', Times, serif;
   font-size: 2.5em;
   text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
   position: relative;
@@ -170,6 +168,22 @@ body.needs-extra-padding {
   height: 100%;
   background-color: rgba(0,0,0,0.4);
   z-index: -1;
+}
+
+.hero-motto {
+  color: white;
+  text-shadow: 2px 2px 4px #000;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.request-estimate-btn {
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+}
+
+.request-estimate-btn:hover {
+  box-shadow: 0 0 15px 4px rgba(255, 255, 255, 1);
 }
 
 /* About Section */
