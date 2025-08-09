@@ -185,9 +185,15 @@ body.needs-extra-padding {
   font-size: 2rem;
   margin-bottom: 15px;
 }
+.hero-motto .motto-years {
+  display: inline;
+}
 @media (max-width: 600px) {
   .hero-motto {
-    font-size: 2.3rem;
+    font-size: 2.8rem;
+  }
+  .hero-motto .motto-years {
+    display: block;
   }
 }
 @media (min-width: 1024px) {
