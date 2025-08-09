@@ -176,16 +176,24 @@ body.needs-extra-padding {
   text-shadow: 0 0 5px rgba(255,255,255,0.7), 2px 2px 4px #000;
   font-family: 'Playfair Display', serif;
   font-style: italic;
+  font-size: 2rem;
   margin-bottom: 15px;
 }
 
 .request-estimate-btn {
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
 }
 
 .request-estimate-btn:hover {
   box-shadow: 0 0 15px 4px rgba(255, 255, 255, 1);
+}
+
+.careers-btn {
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);
+}
+
+.careers-btn:hover {
+  box-shadow: 0 0 12px 4px rgba(255, 255, 255, 1);
 }
 
 /* About Section */
@@ -487,7 +495,7 @@ body.needs-extra-padding {
   background-color: #2e7d32;
   color: white;
   border-radius: 5px;
-  font-size: 1em;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
