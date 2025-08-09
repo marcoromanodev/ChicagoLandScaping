@@ -53,7 +53,7 @@ function initMobileMenu() {
 
 function initSectionObserver() {
   const sections = document.querySelectorAll('section[id]');
-  const options = { threshold: 0.6 };
+  const options = { threshold: 0.3 };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -86,12 +86,17 @@ if (document.readyState === 'loading') {
 
 function highlightCurrentPage() {
   const path = window.location.pathname.split('/').pop();
-  if (path) {
+  if (path && path !== 'index.html') {
     document.querySelectorAll(`a[href='${path}']`).forEach(link => {
+      link.classList.add('active');
+    });
+  } else {
+    document.querySelectorAll("a[href='#about']").forEach(link => {
       link.classList.add('active');
     });
   }
 }
+
 
 function openMenuIfFlag() {
   if (localStorage.getItem('keepMobileMenuOpen') === 'true') {
