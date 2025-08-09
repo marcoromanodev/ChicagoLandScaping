@@ -76,6 +76,7 @@ function init() {
   initSectionObserver();
   highlightCurrentPage();
   openMenuIfFlag();
+  initCarousels();
 }
 
 if (document.readyState === 'loading') {
@@ -115,4 +116,45 @@ function openMenuIfFlag() {
     localStorage.removeItem('keepMobileMenuOpen');
     localStorage.removeItem('activeLink');
   }
+}
+
+function initCarousels() {
+  document.querySelectorAll('.carousel-container').forEach(container => {
+    const carousel = container.querySelector('.carousel-images');
+    const slides = container.querySelectorAll('.carousel-img');
+    const leftArrow = container.querySelector('.left-arrow');
+    const rightArrow = container.querySelector('.right-arrow');
+
+    if (!carousel || slides.length === 0) return;
+
+    const imagesToShow = parseInt(container.getAttribute('data-images-to-show')) || 1;
+    let currentIndex = 0;
+    let imageWidth = slides[0].clientWidth;
+
+    function updateCarousel() {
+      const newTransformValue = -currentIndex * imageWidth;
+      carousel.style.transform = `translateX(${newTransformValue}px)`;
+    }
+
+    rightArrow.addEventListener('click', () => {
+      currentIndex++;
+      if (currentIndex > slides.length - imagesToShow) {
+        currentIndex = 0;
+      }
+      updateCarousel();
+    });
+
+    leftArrow.addEventListener('click', () => {
+      currentIndex--;
+      if (currentIndex < 0) {
+        currentIndex = Math.max(slides.length - imagesToShow, 0);
+      }
+      updateCarousel();
+    });
+
+    window.addEventListener('resize', () => {
+      imageWidth = slides[0].clientWidth;
+      updateCarousel();
+    });
+  });
 }

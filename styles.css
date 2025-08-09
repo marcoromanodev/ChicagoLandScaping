@@ -33,6 +33,12 @@ body.needs-extra-padding {
   padding: 140px 20px 60px;
 }
 
+@media (max-width: 768px) {
+  body.needs-extra-padding {
+    padding-top: 100px;
+  }
+}
+
 /* Header */
 .header {
   background: lightgreen;
@@ -322,7 +328,7 @@ body.needs-extra-padding {
   .solution-item h3 { font-size: 1.3em; }
 }
 
-/* Projects Section */
+/* Portfolio Section */
 #projects {
   text-align: center;
   padding: 40px 20px;
@@ -390,6 +396,11 @@ body.needs-extra-padding {
 }
 .carousel-arrow.left-arrow { left: 0; }
 .carousel-arrow.right-arrow { right: 0; }
+
+@media (min-width: 769px) {
+  .carousel-arrow.left-arrow { left: 10px; }
+  .carousel-arrow.right-arrow { right: 10px; }
+}
 
 /* Testimonials Section */
 #testimonials {

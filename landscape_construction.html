@@ -27,7 +27,7 @@
       <ul class="desktop-menu">
         <li><a href="index.html#about">About Us</a></li>
         <li><a href="index.html#solutions">Solutions</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#projects">Portfolio</a></li>
         <li><a href="index.html#testimonials">Testimonials</a></li>
         <li><a href="index.html#contact">Contact</a></li>
         <li><a href="careers.html">Careers</a></li>
@@ -44,7 +44,7 @@
     <ul>
       <li><a href="index.html#about">About Us</a></li>
       <li><a href="index.html#solutions">Solutions</a></li>
-      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#projects">Portfolio</a></li>
       <li><a href="index.html#testimonials">Testimonials</a></li>
       <li><a href="index.html#contact">Contact</a></li>
       <li><a href="careers.html">Careers</a></li>
@@ -119,44 +119,7 @@
     <p>Developed by <a href="https://saasproductized.com" target="_blank" style="font-weight: bold;">SaaS Productized Co.</a></p>
   </div>
 
-  <!-- Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const carousel = document.querySelector('.carousel-images');
-      const slides = document.querySelectorAll('.carousel-img');
-      const leftArrow = document.querySelector('.left-arrow');
-      const rightArrow = document.querySelector('.right-arrow');
-
-      let currentIndex = 0;
-      const imagesToShow = 1;
-      let imageWidth = slides[0].clientWidth;
-
-      function updateCarousel() {
-        const newTransformValue = -currentIndex * imageWidth;
-        carousel.style.transform = \`translateX(\${newTransformValue}px)\`;
-      }
-
-      rightArrow.addEventListener('click', () => {
-        if (currentIndex < slides.length - imagesToShow) {
-          currentIndex++;
-          updateCarousel();
-        }
-      });
-
-      leftArrow.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateCarousel();
-        }
-      });
-
-      window.addEventListener('resize', () => {
-        imageWidth = slides[0].clientWidth;
-        updateCarousel();
-      });
-    });
-  </script>
-</body>
+  </body>
 </html>
 
 
