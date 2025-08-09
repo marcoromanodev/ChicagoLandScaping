@@ -33,18 +33,35 @@ function initMobileMenu() {
   mobileMenu.addEventListener('click', function (e) {
     e.stopPropagation();
   });
+}
 
-  // Close menu when a menu link is clicked
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function () {
-      mobileMenu.classList.remove('show');
-      hamburger.classList.remove('active');
+function initSectionObserver() {
+  const sections = document.querySelectorAll('section[id]');
+  const options = { threshold: 0.6 };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      document.querySelectorAll(`a[href="#${id}"]`).forEach(link => {
+        if (entry.isIntersecting) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
     });
-  });
+  }, options);
+
+  sections.forEach(section => observer.observe(section));
+}
+
+function init() {
+  initMobileMenu();
+  initSectionObserver();
 }
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initMobileMenu);
+  document.addEventListener('DOMContentLoaded', init);
 } else {
-  initMobileMenu();
+  init();
 }
