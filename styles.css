@@ -68,7 +68,10 @@ body.needs-extra-padding {
 }
 .main-nav ul li a:hover { color: white; text-shadow: 0 0 10px white; }
 /* Highlight active navigation link */
-.main-nav ul li a.active,
+.main-nav ul li a.active {
+  color: darkgreen;
+}
+
 .mobile-menu ul li a.active {
   color: lightgreen;
 }
