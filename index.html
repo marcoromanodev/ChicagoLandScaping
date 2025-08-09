@@ -41,7 +41,7 @@
       <ul class="desktop-menu">
         <li><a href="#about">About Us</a></li>
         <li><a href="#solutions">Solutions</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#projects">Portfolio</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="careers.html">Careers</a></li>
@@ -60,7 +60,7 @@
     <ul>
       <li><a href="#about">About Us</a></li>
       <li><a href="#solutions">Solutions</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#projects">Portfolio</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="careers.html">Careers</a></li>
@@ -156,10 +156,10 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Portfolio Section -->
   <section id="projects" class="projects">
-    <h2>Our Recent Projects</h2>
-    <div class="carousel-container">
+    <h2>Our Portfolio</h2>
+    <div class="carousel-container" data-images-to-show="2">
       <button class="carousel-arrow left-arrow">&#10094;</button>
       <div class="carousel">
         <div class="carousel-images">
@@ -241,42 +241,6 @@
     <p>Developed by <a href="https://saasproductized.com" target="_blank" style="font-weight: bold;">SaaS Productized Co.</a></p>
   </div>
 
-    <!-- Inline JavaScript (carousel only) -->
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const carousel = document.querySelector('.carousel-images');
-      const carouselImages = document.querySelectorAll('.carousel-img');
-      const leftArrow = document.querySelector('.left-arrow');
-      const rightArrow = document.querySelector('.right-arrow');
 
-      let currentIndex = 0;
-      const imagesToShow = 2; // Show two images at a time now
-      let imageWidth = carouselImages[0].clientWidth;
-
-      function updateCarousel() {
-        const newTransformValue = -currentIndex * imageWidth;
-        carousel.style.transform = `translateX(${newTransformValue}px)`;
-      }
-
-      rightArrow.addEventListener('click', () => {
-        if (currentIndex < carouselImages.length - imagesToShow) {
-          currentIndex++;
-          updateCarousel();
-        }
-      });
-
-      leftArrow.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateCarousel();
-        }
-      });
-
-      window.addEventListener('resize', () => {
-        imageWidth = carouselImages[0].clientWidth;
-        updateCarousel();
-      });
-    });
-  </script>
 </body>
 </html>
