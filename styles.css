@@ -67,6 +67,11 @@ body.needs-extra-padding {
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 .main-nav ul li a:hover { color: white; text-shadow: 0 0 10px white; }
+/* Highlight active navigation link */
+.main-nav ul li a.active,
+.mobile-menu ul li a.active {
+  color: lightgreen;
+}
 
 .hamburger {
   display: none;
@@ -158,7 +163,7 @@ body.needs-extra-padding {
   opacity: 0.8;
 }
 @media (max-width: 768px) {
-  .main-banner { padding-top: 180px; }
+  .main-banner { padding-top: 100px; }
 }
 .main-banner::before {
   content: '';
@@ -172,13 +177,18 @@ body.needs-extra-padding {
 }
 
 .hero-motto {
-  color: #2e7d32;
+  color: white;
   font-weight: bold;
   text-shadow: 0 0 5px rgba(255,255,255,0.7), 2px 2px 4px #000;
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 2rem;
   margin-bottom: 15px;
+}
+@media (min-width: 1024px) {
+  .hero-motto {
+    font-size: 2.5rem;
+  }
 }
 
 .request-estimate-btn {
