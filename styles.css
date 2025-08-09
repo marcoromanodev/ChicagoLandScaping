@@ -57,8 +57,9 @@ body.needs-extra-padding {
 
 .main-nav ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-grow: 1;
+  flex-wrap: wrap;
 }
 .main-nav ul li { margin: 0 15px; }
 .main-nav ul li a {
