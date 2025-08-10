@@ -193,17 +193,26 @@ function initLogoGlow() {
 }
 
 function initReviewStars() {
-  const container = document.querySelector('.customer-reviews .star-rating');
-  if (!container) return;
+  const wrapper = document.querySelector('.customer-reviews');
+  if (!wrapper) return;
+  const starContainer = wrapper.querySelector('.star-rating');
+  const ratingNumberEl = wrapper.querySelector('.rating-number');
+  const ratingCountEl = wrapper.querySelector('.rating-count');
   const endpoint = 'https://example.com/api/reviews';
   fetch(endpoint)
     .then(res => res.json())
     .then(data => {
       const rating = parseFloat(data.rating) || 0;
-      renderStars(container, rating);
+      const count = parseInt(data.count) || 0;
+      if (ratingNumberEl) ratingNumberEl.textContent = rating.toFixed(1);
+      if (ratingCountEl) ratingCountEl.textContent = `(${count} Ratings & Reviews)`;
+      renderStars(starContainer, rating);
     })
     .catch(() => {
-      renderStars(container, 4.5);
+      const fallback = 4.5;
+      if (ratingNumberEl) ratingNumberEl.textContent = fallback.toFixed(1);
+      if (ratingCountEl) ratingCountEl.textContent = '(0 Ratings & Reviews)';
+      renderStars(starContainer, fallback);
     });
 }
 
