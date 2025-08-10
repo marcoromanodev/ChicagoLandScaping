@@ -199,20 +199,27 @@ function initReviewStars() {
   const ratingNumberEl = wrapper.querySelector('.rating-number');
   const ratingCountEl = wrapper.querySelector('.rating-count');
   const endpoint = 'https://example.com/api/reviews';
+  const defaultRating = 5;
+  const defaultCount = 7;
   fetch(endpoint)
     .then(res => res.json())
     .then(data => {
-      const rating = parseFloat(data.rating) || 0;
-      const count = parseInt(data.count) || 0;
-      if (ratingNumberEl) ratingNumberEl.textContent = rating.toFixed(1);
-      if (ratingCountEl) ratingCountEl.textContent = `(${count} Ratings & Reviews)`;
-      renderStars(starContainer, rating);
+      const rating = parseFloat(data.rating);
+      const count = parseInt(data.count);
+      if (rating > 0 && count > 0) {
+        if (ratingNumberEl) ratingNumberEl.textContent = rating.toFixed(1);
+        if (ratingCountEl) ratingCountEl.textContent = `(${count} Ratings & Reviews)`;
+        renderStars(starContainer, rating);
+      } else {
+        if (ratingNumberEl) ratingNumberEl.textContent = defaultRating.toFixed(1);
+        if (ratingCountEl) ratingCountEl.textContent = `(${defaultCount} Ratings & Reviews)`;
+        renderStars(starContainer, defaultRating);
+      }
     })
     .catch(() => {
-      const fallback = 4.5;
-      if (ratingNumberEl) ratingNumberEl.textContent = fallback.toFixed(1);
-      if (ratingCountEl) ratingCountEl.textContent = '(0 Ratings & Reviews)';
-      renderStars(starContainer, fallback);
+      if (ratingNumberEl) ratingNumberEl.textContent = defaultRating.toFixed(1);
+      if (ratingCountEl) ratingCountEl.textContent = `(${defaultCount} Ratings & Reviews)`;
+      renderStars(starContainer, defaultRating);
     });
 }
 
