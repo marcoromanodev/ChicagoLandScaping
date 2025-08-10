@@ -91,6 +91,7 @@ function init() {
   highlightCurrentPage();
   openMenuIfFlag();
   initCarousels();
+  initLogoGlow();
 }
 
 if (document.readyState === 'loading') {
@@ -178,5 +179,14 @@ function initCarousels() {
       imageWidth = slides[0].clientWidth;
       updateCarousel();
     });
+  });
+}
+
+function initLogoGlow() {
+  const logo = document.querySelector('.logo-container img');
+  if (!logo) return;
+  logo.addEventListener('click', function () {
+    logo.classList.add('glow');
+    setTimeout(() => logo.classList.remove('glow'), 500);
   });
 }
