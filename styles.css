@@ -109,6 +109,37 @@ body.needs-extra-padding {
 }
 .hamburger.active { color: limegreen; text-shadow: 0 0 10px limegreen; }
 
+/* Customer Reviews Star Rating */
+.customer-reviews {
+  text-align: center;
+  margin-top: 90px;
+}
+
+.customer-reviews .star-rating i {
+  color: #FFD700;
+  margin: 0 2px;
+  font-size: 1.1rem;
+  opacity: 0;
+  animation: starFade 0.6s forwards;
+}
+
+.customer-reviews .star-rating i:nth-child(1) { animation-delay: 0.1s; }
+.customer-reviews .star-rating i:nth-child(2) { animation-delay: 0.2s; }
+.customer-reviews .star-rating i:nth-child(3) { animation-delay: 0.3s; }
+.customer-reviews .star-rating i:nth-child(4) { animation-delay: 0.4s; }
+.customer-reviews .star-rating i:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes starFade {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .customer-reviews .star-rating i {
+    font-size: 1.4rem;
+  }
+}
+
 /* Mobile Menu */
 .mobile-menu {
   display: none;
@@ -243,6 +274,8 @@ body.needs-extra-padding {
 @media (min-width: 1024px) {
   .hero-motto {
     font-size: 2.5rem;
+    -webkit-text-stroke: 0.05px red;
+    text-stroke: 0.05px red;
   }
 }
 

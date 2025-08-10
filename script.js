@@ -92,6 +92,7 @@ function init() {
   openMenuIfFlag();
   initCarousels();
   initLogoGlow();
+  initReviewStars();
 }
 
 if (document.readyState === 'loading') {
@@ -188,5 +189,40 @@ function initLogoGlow() {
   logo.addEventListener('click', function () {
     logo.classList.add('glow');
     setTimeout(() => logo.classList.remove('glow'), 500);
+  });
+}
+
+function initReviewStars() {
+  const container = document.querySelector('.customer-reviews .star-rating');
+  if (!container) return;
+  const endpoint = 'https://example.com/api/reviews';
+  fetch(endpoint)
+    .then(res => res.json())
+    .then(data => {
+      const rating = parseFloat(data.rating) || 0;
+      renderStars(container, rating);
+    })
+    .catch(() => {
+      renderStars(container, 4.5);
+    });
+}
+
+function renderStars(container, rating) {
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating - fullStars >= 0.5;
+  container.innerHTML = '';
+  for (let i = 1; i <= 5; i++) {
+    const star = document.createElement('i');
+    if (i <= fullStars) {
+      star.className = 'fas fa-star';
+    } else if (i === fullStars + 1 && hasHalfStar) {
+      star.className = 'fas fa-star-half-alt';
+    } else {
+      star.className = 'far fa-star';
+    }
+    container.appendChild(star);
+  }
+  container.querySelectorAll('i').forEach((star, index) => {
+    star.style.animationDelay = `${(index + 1) * 0.1}s`;
   });
 }
