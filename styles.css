@@ -245,7 +245,6 @@ body.needs-extra-padding {
   font-size: 2.5em;
   text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
   position: relative;
-  opacity: 0.8;
 }
 @media (max-width: 768px) {
   .main-banner { padding-top: 100px; }
@@ -258,7 +257,12 @@ body.needs-extra-padding {
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.4);
-  z-index: -1;
+  z-index: 0;
+}
+
+.main-banner > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-motto {
