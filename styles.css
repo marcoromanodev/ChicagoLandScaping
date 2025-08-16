@@ -245,7 +245,6 @@ body.needs-extra-padding {
   font-size: 2.5em;
   text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
   position: relative;
-  opacity: 0.8;
 }
 @media (max-width: 768px) {
   .main-banner { padding-top: 100px; }
@@ -314,7 +313,6 @@ body.needs-extra-padding {
   background: url('aboutus.png') no-repeat center center/cover;
   background-size: cover;
   padding: 40px;
-  opacity: 0.8;
 }
 .about h2 {
   font-family: 'Roboto Condensed', sans-serif;
@@ -357,7 +355,6 @@ body.needs-extra-padding {
   background: url('2.jpeg') no-repeat center center/cover;
   padding: 40px 20px;
   color: black;
-  opacity: 0.8;
 }
 .solutions h2 {
   font-family: 'Roboto Condensed', sans-serif;
